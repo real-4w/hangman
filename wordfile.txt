@@ -1,0 +1,4 @@
+hangman
+computer
+chairs
+football

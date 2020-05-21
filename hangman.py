@@ -12,10 +12,13 @@ words = ["hangman", "chairs", "backpack", "bodywash", "clothing",
         "sweatpants", "mattress", "friends", "clocks", "biology",
          "algebra", "suitcase", "knives", "ninjas", "shampoo", 'chromebook',
 		 "football"]
+#=============================================================================
+word_list = []
+with open("wordfile.txt", "r") as f:
+    word_list = f.read().split()
+word = random.choice(word_list).lower()
 
-word = random.choice(words).lower()
-
-if  True:#__name__ == '__main__':
+if  __name__ == '__main__':
 	chances = len(word) + 2
 	print(f"Guess the word. The word is {len(word)} long, meaning you will get {chances} chances.")
 
