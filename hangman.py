@@ -1,17 +1,23 @@
-# Simplest hangman possible
+# Simplest hangman possible for Alex
+# Based on https://www.geeksforgeeks.org/hangman-game-python/
 import random
 from collections import Counter
 
-someWords = '''apple banana mango strawberry
-orange grape pineapple apricot lemon coconut watermelon
-cherry papaya berry peach lychee muskmelon'''
+# welcoming the user
+name = input("What is your name? ")
+print("Hello, " + name, "Time to play hangman - created by Alex!")
 
-someWords = someWords.split(' ')
-# randomly choose a secret word from our "someWords" LIST.
-word = random.choice(someWords)
+words = ["hangman", "chairs", "backpack", "bodywash", "clothing",
+		"computer", "python", "program", "glasses", "sweatshirt",
+        "sweatpants", "mattress", "friends", "clocks", "biology",
+         "algebra", "suitcase", "knives", "ninjas", "shampoo", 'chromebook',
+		 "football"]
 
-if __name__ == '__main__':
-	print('Guess the word! HINT: word is a name of a fruit')
+word = random.choice(words).lower()
+
+if  True:#__name__ == '__main__':
+	chances = len(word) + 2
+	print(f"Guess the word. The word is {len(word)} long, meaning you will get {chances} chances.")
 
 	for i in word:
 		# For printing the empty spaces for letters of the word
@@ -21,7 +27,6 @@ if __name__ == '__main__':
 	playing = True
 	# list for storing the letters guessed by the player
 	letterGuessed = ''
-	chances = len(word) + 2
 	correct = 0
 	flag = 0
 	try:
@@ -69,8 +74,6 @@ if __name__ == '__main__':
 					break # To break out of the while loop
 				else:
 					print('_', end = ' ')
-
-
 
 		# If user has used all of his chances
 		if chances <= 0 and (Counter(letterGuessed) != Counter(word)):
