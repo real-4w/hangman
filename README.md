@@ -1,2 +1,2 @@
 # hangman
-Hangman for Alex.
+Hangman for Alex by Alex and dad.

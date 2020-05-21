@@ -2,3 +2,14 @@ hangman
 computer
 chairs
 football
+automobile
+keyboard
+seasons
+knights
+stables
+pitlane
+wallet
+gangster
+banana
+papaya
+strawberry

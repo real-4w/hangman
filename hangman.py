@@ -7,16 +7,12 @@ from collections import Counter
 name = input("What is your name? ")
 print("Hello, " + name, "Time to play hangman - created by Alex!")
 
-words = ["hangman", "chairs", "backpack", "bodywash", "clothing",
-		"computer", "python", "program", "glasses", "sweatshirt",
-        "sweatpants", "mattress", "friends", "clocks", "biology",
-         "algebra", "suitcase", "knives", "ninjas", "shampoo", 'chromebook',
-		 "football"]
-#=============================================================================
+#Change to load the words from a file ========================================
 word_list = []
 with open("wordfile.txt", "r") as f:
     word_list = f.read().split()
 word = random.choice(word_list).lower()
+#=============================================================================
 
 if  __name__ == '__main__':
 	chances = len(word) + 2
